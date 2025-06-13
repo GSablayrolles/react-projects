@@ -3,6 +3,7 @@
     "dev": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite",
     "slot-machine": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m slot-machine ",
     "shopping-list": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m shopping-list ",
+    "color-box": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m color-box ",
     "build": "deno run -A --node-modules-dir=auto npm:vite build"
   },
   "imports": {
