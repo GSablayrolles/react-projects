@@ -1,16 +1,13 @@
+import ShoppingListItem from "./ShoppingListItem.tsx";
+
 function ShoppingList({ items }) {
   return (
     <ul>
       {items.map((i) => (
-        <li
+        <ShoppingListItem
           key={i.id}
-          style={{
-            color: i.completed ? "grey" : "",
-            textDecoration: i.completed ? "line-through" : "",
-          }}
-        >
-          {i.item} - {i.quantity}
-        </li>
+          {...i}
+        />
       ))}
     </ul>
   );
