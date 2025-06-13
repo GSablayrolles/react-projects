@@ -1,4 +1,10 @@
-function ShoppingListItem({ item, quantity, completed }) {
+function ShoppingListItem(
+  { item, quantity, completed }: {
+    item: string;
+    quantity: number;
+    completed: boolean;
+  },
+) {
   const styles = {
     color: completed ? "grey" : "",
     textDecoration: completed ? "line-through" : "",

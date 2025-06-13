@@ -1,6 +1,13 @@
 import ShoppingListItem from "./ShoppingListItem.tsx";
 
-function ShoppingList({ items }) {
+interface ItemProp {
+  id: number;
+  item: string;
+  quantity: number;
+  completed: boolean;
+}
+
+function ShoppingList({ items }: { items: ItemProp[] }) {
   return (
     <ul>
       {items.map((i) => (
