@@ -1,6 +1,6 @@
 function ShoppingListItem(
-  { item, quantity, completed }: {
-    item: string;
+  { product, quantity, completed }: {
+    product: string;
     quantity: number;
     completed: boolean;
   },
@@ -14,7 +14,7 @@ function ShoppingListItem(
     <li
       style={styles}
     >
-      {item} - {quantity}
+      {product} - {quantity}
     </li>
   );
 }
