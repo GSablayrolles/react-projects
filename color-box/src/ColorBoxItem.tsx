@@ -5,7 +5,12 @@ function ColorBoxItem({ colors }: { colors: string[] }) {
     colors[Math.floor(Math.random() * colors.length)],
   );
 
-  const styles = { backgroundColor: randColor, padding: "50px" };
+  const styles = {
+    backgroundColor: randColor,
+    width: "5em",
+    height: "5em",
+    margin: 0,
+  };
 
   return (
     <h1
