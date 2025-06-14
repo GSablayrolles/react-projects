@@ -5,7 +5,7 @@ import ShoppingListItem from "./ShoppingListItem.tsx";
 
 function ShoppingList() {
   const [items, setItems] = useState([{
-    id: 1,
+    id: crypto.randomUUID(),
     product: "eggs",
     quantity: 12,
     completed: false,
@@ -15,7 +15,7 @@ function ShoppingList() {
     setItems((currItems) => {
       return [...currItems, {
         ...item,
-        id: currItems.length + 1,
+        id: crypto.randomUUID(),
         completed: false,
       }];
     });

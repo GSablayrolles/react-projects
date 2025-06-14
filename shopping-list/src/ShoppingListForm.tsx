@@ -17,6 +17,7 @@ function ShoppingListForm({ addItem }) {
 
     console.log(formData);
     addItem(formData);
+    setFormData({ product: "", quantity: 0 });
   };
 
   return (
