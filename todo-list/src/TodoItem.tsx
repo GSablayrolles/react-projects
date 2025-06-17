@@ -23,6 +23,11 @@ export default function TodoItem({ todo, remove, toggle }: Todo) {
     toggle(todo.id);
   };
 
+  const styles = {
+    color: todo.completed ? "grey" : "",
+    textDecoration: todo.completed ? "line-through" : "",
+  };
+
   return (
     <ListItem
       secondaryAction={
@@ -31,6 +36,7 @@ export default function TodoItem({ todo, remove, toggle }: Todo) {
         </IconButton>
       }
       disablePadding
+      sx={styles}
     >
       <ListItemButton role={undefined} onClick={toggleTodo} dense>
         <ListItemIcon>
@@ -41,7 +47,10 @@ export default function TodoItem({ todo, remove, toggle }: Todo) {
             disableRipple
           />
         </ListItemIcon>
-        <ListItemText id={labelId} primary={todo.text} />
+        <ListItemText
+          id={labelId}
+          primary={todo.text}
+        />
       </ListItemButton>
     </ListItem>
   );

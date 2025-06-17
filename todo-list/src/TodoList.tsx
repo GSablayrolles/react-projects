@@ -1,6 +1,8 @@
 import List from "@mui/material/List";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import AlarmIcon from "@mui/icons-material/Alarm";
 
 import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem.tsx";
@@ -61,13 +63,25 @@ function TodoList() {
         justifyContent: "center",
         flexDirection: "column",
         alignItems: "center",
-        m: 3,
+        p: 3,
+        bgcolor: "#242424",
       }}
     >
-      <Typography variant="h2" component="h1" sx={{ flexGrow: 1 }}>
+      <Typography
+        variant="h2"
+        component="h1"
+        sx={{ flexGrow: 1, color: "white" }}
+      >
         Todos
       </Typography>
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+      <List
+        sx={{
+          width: "100%",
+          maxWidth: 1 / 2,
+          bgcolor: "background.paper",
+          borderRadius: 3,
+        }}
+      >
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}

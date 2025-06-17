@@ -20,8 +20,14 @@ export default function TodoForm(
     addTodo(text);
     setText("");
   };
+
   return (
-    <ListItem>
+    <ListItem
+      sx={{
+        borderTop: 1,
+        borderColor: "#242424",
+      }}
+    >
       <form onSubmit={handleSubmit}>
         <TextField
           id="todo-form"
