@@ -5,6 +5,7 @@
     "shopping-list": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m shopping-list ",
     "color-box": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m color-box ",
     "score-keeper": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m score-keeper ",
+    "todo-list": "deno fmt --watch & deno run -A --node-modules-dir=auto npm:vite -m todo-list ",
     "build": "deno run -A --node-modules-dir=auto npm:vite build"
   },
   "imports": {
