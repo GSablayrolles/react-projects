@@ -1,8 +1,6 @@
 import List from "@mui/material/List";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import AlarmIcon from "@mui/icons-material/Alarm";
 
 import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem.tsx";
@@ -56,6 +54,18 @@ function TodoList() {
     });
   };
 
+  const editTodo = (id: string, text: string) => {
+    setTodos((prevTodo) => {
+      return prevTodo.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, text: text };
+        } else {
+          return todo;
+        }
+      });
+    });
+  };
+
   return (
     <Box
       sx={{
@@ -88,6 +98,7 @@ function TodoList() {
             todo={todo}
             remove={removeTodo}
             toggle={toggleTodo}
+            edit={editTodo}
           />
         ))}
         <TodoForm addTodo={addTodo} />
