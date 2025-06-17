@@ -7,6 +7,7 @@
     "npm:@emotion/styled@^11.14.0": "11.14.0_@emotion+react@11.14.0__react@19.1.0_react@19.1.0",
     "npm:@eslint/js@^9.25.0": "9.28.0",
     "npm:@fontsource/roboto@^5.2.6": "5.2.6",
+    "npm:@mui/icons-material@^7.1.1": "7.1.1_@mui+material@7.1.1__@emotion+react@11.14.0___react@19.1.0__@emotion+styled@11.14.0___@emotion+react@11.14.0____react@19.1.0___react@19.1.0__@types+react@19.1.8__react@19.1.0__react-dom@19.1.0___react@19.1.0_@types+react@19.1.8_react@19.1.0_@emotion+react@11.14.0__react@19.1.0_@emotion+styled@11.14.0__@emotion+react@11.14.0___react@19.1.0__react@19.1.0_react-dom@19.1.0__react@19.1.0",
     "npm:@mui/material@^7.1.1": "7.1.1_@emotion+react@11.14.0__react@19.1.0_@emotion+styled@11.14.0__@emotion+react@11.14.0___react@19.1.0__react@19.1.0_@types+react@19.1.8_react@19.1.0_react-dom@19.1.0__react@19.1.0",
     "npm:@types/react-dom@^19.1.2": "19.1.6_@types+react@19.1.8",
     "npm:@types/react@^19.1.2": "19.1.8",
@@ -509,6 +510,18 @@
     },
     "@mui/core-downloads-tracker@7.1.1": {
       "integrity": "sha512-yBckQs4aQ8mqukLnPC6ivIRv6guhaXi8snVl00VtyojBbm+l6VbVhyTSZ68Abcx7Ah8B+GZhrB7BOli+e+9LkQ=="
+    },
+    "@mui/icons-material@7.1.1_@mui+material@7.1.1__@emotion+react@11.14.0___react@19.1.0__@emotion+styled@11.14.0___@emotion+react@11.14.0____react@19.1.0___react@19.1.0__@types+react@19.1.8__react@19.1.0__react-dom@19.1.0___react@19.1.0_@types+react@19.1.8_react@19.1.0_@emotion+react@11.14.0__react@19.1.0_@emotion+styled@11.14.0__@emotion+react@11.14.0___react@19.1.0__react@19.1.0_react-dom@19.1.0__react@19.1.0": {
+      "integrity": "sha512-X37+Yc8QpEnl0sYmz+WcLFy2dWgNRzbswDzLPXG7QU1XDVlP5TPp1HXjdmCupOWLL/I9m1fyhcyZl8/HPpp/Cg==",
+      "dependencies": [
+        "@babel/runtime",
+        "@mui/material",
+        "@types/react",
+        "react"
+      ],
+      "optionalPeers": [
+        "@types/react"
+      ]
     },
     "@mui/material@7.1.1_@emotion+react@11.14.0__react@19.1.0_@emotion+styled@11.14.0__@emotion+react@11.14.0___react@19.1.0__react@19.1.0_@types+react@19.1.8_react@19.1.0_react-dom@19.1.0__react@19.1.0": {
       "integrity": "sha512-mTpdmdZCaHCGOH3SrYM41+XKvNL0iQfM9KlYgpSjgadXx/fEKhhvOktxm8++Xw6FFeOHoOiV+lzOI8X1rsv71A==",
@@ -1807,6 +1820,7 @@
         "npm:@emotion/styled@^11.14.0",
         "npm:@eslint/js@^9.25.0",
         "npm:@fontsource/roboto@^5.2.6",
+        "npm:@mui/icons-material@^7.1.1",
         "npm:@mui/material@^7.1.1",
         "npm:@types/react-dom@^19.1.2",
         "npm:@types/react@^19.1.2",
