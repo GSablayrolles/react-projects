@@ -6,6 +6,7 @@ function App() {
   return (
     <>
       <CssBaseline />
+      <h1>Todo List</h1>
       <TodoList />
     </>
   );
