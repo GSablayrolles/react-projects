@@ -10,7 +10,14 @@ interface Todo {
   id: string;
   text: string;
   completed: boolean;
+  label: string;
 }
+
+const referenceLabels = [
+  { label: "Animals", color: "#737aff" },
+  { label: "House", color: "#5cf78d" },
+  { label: "Car", color: "#ed76ed" },
+];
 
 const getTodos = () => {
   const storedTodos = localStorage.getItem("todos");
@@ -50,15 +57,16 @@ function TodoList() {
         text: text,
         id: crypto.randomUUID(),
         completed: false,
+        label: "",
       }];
     });
   };
 
-  const editTodo = (id: string, text: string) => {
+  const editTodo = (id: string, text: string, label: string) => {
     setTodos((prevTodo) => {
       return prevTodo.map((todo) => {
         if (todo.id === id) {
-          return { ...todo, text: text };
+          return { ...todo, text: text, label: label };
         } else {
           return todo;
         }
@@ -99,6 +107,7 @@ function TodoList() {
             remove={removeTodo}
             toggle={toggleTodo}
             edit={editTodo}
+            referenceLabels={referenceLabels}
           />
         ))}
         <TodoForm addTodo={addTodo} />

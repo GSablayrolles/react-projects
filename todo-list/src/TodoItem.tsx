@@ -9,28 +9,26 @@ import Chip from "@mui/material/Chip";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormControl from "@mui/material/FormControl";
 
 interface Todo {
-  todo: { id: string; text: string; completed: boolean };
+  todo: { id: string; text: string; completed: boolean; label: string };
   remove: (id: string) => void;
   toggle: (id: string) => void;
-  edit: (id: string, text: string) => void;
+  edit: (id: string, text: string, label: string) => void;
+  referenceLabels: { label: string; color: string }[];
 }
 
-const top100Films = [
-  { title: "The Shawshank Redemption", year: 1994 },
-  { title: "The Godfather", year: 1972 },
-  { title: "The Godfather: Part II", year: 1974 },
-  { title: "The Dark Knight", year: 2008 },
-  { title: "12 Angry Men", year: 1957 },
-  { title: "Schindler's List", year: 1993 },
-  { title: "Pulp Fiction", year: 1994 },
-];
-
-export default function TodoItem({ todo, remove, toggle, edit }: Todo) {
+export default function TodoItem(
+  { todo, remove, toggle, edit, referenceLabels }: Todo,
+) {
   const [editText, setEditText] = useState(todo.text);
+  const [editLabel, setEditLabel] = useState(todo.label);
+
+  useEffect(() => {
+    edit(todo.id, editText, editLabel);
+  }, [editLabel]);
 
   //   const labelId = `checkbox-list-label-${todo.id}`;
 
@@ -46,10 +44,16 @@ export default function TodoItem({ todo, remove, toggle, edit }: Todo) {
     setEditText(e.target.value);
   };
 
+  const handleLabelChange = (e) => {
+    setEditLabel(e.target.innerText || "");
+  };
+
   const editTodo = (e) => {
     e.preventDefault();
 
-    edit(todo.id, editText);
+    console.log(editLabel);
+
+    edit(todo.id, editText, editLabel);
   };
 
   const styles = {
@@ -95,14 +99,18 @@ export default function TodoItem({ todo, remove, toggle, edit }: Todo) {
 
         <FormControl fullWidth>
           <Autocomplete
-            options={top100Films}
-            getOptionLabel={(option) => option.title}
+            value={referenceLabels.find((label) => label.label === editLabel) ||
+              null}
+            onChange={handleLabelChange}
+            options={referenceLabels}
+            getOptionLabel={(option) => option.label}
             renderValue={(value, getItemProps) => (
               <Chip
-                label={value.title}
+                label={value.label}
                 {...getItemProps()}
-                color="success"
+                color="warning"
                 variant="outlined"
+                size="small"
               />
             )}
             renderInput={(params) => (
