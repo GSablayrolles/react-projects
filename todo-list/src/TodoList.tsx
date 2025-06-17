@@ -87,7 +87,7 @@ function TodoList() {
       <List
         sx={{
           width: "100%",
-          maxWidth: 1 / 2,
+          maxWidth: 3 / 4,
           bgcolor: "background.paper",
           borderRadius: 3,
         }}

@@ -3,11 +3,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 // import ListItemText from "@mui/material/ListItemText";
 import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import Chip from "@mui/material/Chip";
 
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
+import FormControl from "@mui/material/FormControl";
 
 interface Todo {
   todo: { id: string; text: string; completed: boolean };
@@ -15,6 +18,16 @@ interface Todo {
   toggle: (id: string) => void;
   edit: (id: string, text: string) => void;
 }
+
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+  { title: "Pulp Fiction", year: 1994 },
+];
 
 export default function TodoItem({ todo, remove, toggle, edit }: Todo) {
   const [editText, setEditText] = useState(todo.text);
@@ -79,6 +92,28 @@ export default function TodoItem({ todo, remove, toggle, edit }: Todo) {
             disabled={todo.completed}
           />
         </form>
+
+        <FormControl fullWidth>
+          <Autocomplete
+            options={top100Films}
+            getOptionLabel={(option) => option.title}
+            renderValue={(value, getItemProps) => (
+              <Chip
+                label={value.title}
+                {...getItemProps()}
+                color="success"
+                variant="outlined"
+              />
+            )}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Reference"
+                variant="standard"
+              />
+            )}
+          />
+        </FormControl>
       </ListItemButton>
     </ListItem>
   );
