@@ -9,13 +9,18 @@ import ClearIcon from "@mui/icons-material/Clear";
 interface Todo {
   todo: { id: number; text: string; completed: boolean };
   remove: (id: number) => void;
+  toggle: (id: number) => void;
 }
 
-export default function TodoItem({ todo, remove }: Todo) {
+export default function TodoItem({ todo, remove, toggle }: Todo) {
   const labelId = `checkbox-list-label-${todo.id}`;
 
   const removeTodo = () => {
     remove(todo.id);
+  };
+
+  const toggleTodo = () => {
+    toggle(todo.id);
   };
 
   return (
@@ -27,7 +32,7 @@ export default function TodoItem({ todo, remove }: Todo) {
       }
       disablePadding
     >
-      <ListItemButton role={undefined} dense>
+      <ListItemButton role={undefined} onClick={toggleTodo} dense>
         <ListItemIcon>
           <Checkbox
             edge="start"

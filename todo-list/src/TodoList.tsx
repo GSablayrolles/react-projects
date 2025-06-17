@@ -19,10 +19,27 @@ function TodoList() {
     });
   };
 
+  const toggleTodo = (id: number) => {
+    setTodos((prevTodo) => {
+      return prevTodo.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
+        }
+      });
+    });
+  };
+
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} remove={removeTodo} />
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          remove={removeTodo}
+          toggle={toggleTodo}
+        />
       ))}
     </List>
   );
