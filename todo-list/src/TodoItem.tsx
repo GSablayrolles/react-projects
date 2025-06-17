@@ -7,9 +7,9 @@ import IconButton from "@mui/material/IconButton";
 import ClearIcon from "@mui/icons-material/Clear";
 
 interface Todo {
-  todo: { id: number; text: string; completed: boolean };
-  remove: (id: number) => void;
-  toggle: (id: number) => void;
+  todo: { id: string; text: string; completed: boolean };
+  remove: (id: string) => void;
+  toggle: (id: string) => void;
 }
 
 export default function TodoItem({ todo, remove, toggle }: Todo) {

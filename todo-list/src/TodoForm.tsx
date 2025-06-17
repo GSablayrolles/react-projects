@@ -5,7 +5,9 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Create from "@mui/icons-material/Create";
 
-export default function TodoForm({ addTodo }) {
+export default function TodoForm(
+  { addTodo }: { addTodo: (text: string) => void },
+) {
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
