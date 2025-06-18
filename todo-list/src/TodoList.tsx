@@ -13,12 +13,6 @@ interface Todo {
   label: string;
 }
 
-const referenceLabels = [
-  { label: "Animals", color: "#737aff" },
-  { label: "House", color: "#5cf78d" },
-  { label: "Car", color: "#ed76ed" },
-];
-
 const getTodos = () => {
   const storedTodos = localStorage.getItem("todos");
 
@@ -107,7 +101,6 @@ function TodoList() {
             remove={removeTodo}
             toggle={toggleTodo}
             edit={editTodo}
-            referenceLabels={referenceLabels}
           />
         ))}
         <TodoForm addTodo={addTodo} />
